@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GRS Event Management - Wedding, reception, birthday and event decoration services in Arakandanallur, Thirukovilur, Tamil Nadu.">
+  <title>GRS Event Management | Arakandanallur - Thirukovilur</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#09090b;--card:#141418;--gold:#d7aa55;--gold2:#f2d28b;--text:#f7f5ef;--muted:#b9b4aa;--line:#2a292d}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    header{position:fixed;top:0;left:0;width:100%;z-index:20;background:rgba(9,9,11,.78);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
+    nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-family:"Playfair Display",serif;font-size:24px;font-weight:800;letter-spacing:.5px}
+    .brand span{color:var(--gold)}
+    .navlinks{display:flex;gap:25px;color:#ddd;font-size:14px}
+    .navlinks a:hover{color:var(--gold2)}
+    .menu{display:none;background:none;border:0;color:white;font-size:26px}
+    .hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding:120px 0 70px;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,rgba(215,170,85,.18),transparent 38%),radial-gradient(circle at 20% 80%,rgba(110,70,30,.12),transparent 35%)}
+    .hero-content{position:relative;max-width:850px}
+    .eyebrow{display:inline-block;border:1px solid rgba(215,170,85,.45);color:var(--gold2);padding:7px 14px;border-radius:999px;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:22px}
+    h1{font-family:"Playfair Display",serif;font-size:clamp(48px,8vw,92px);line-height:.98;margin-bottom:20px}
+    h1 span{color:var(--gold)}
+    .hero p{max-width:650px;margin:auto;color:var(--muted);font-size:18px}
+    .actions{display:flex;justify-content:center;gap:12px;margin-top:32px;flex-wrap:wrap}
+    .btn{padding:13px 20px;border-radius:8px;font-weight:700;font-size:14px;border:1px solid var(--gold)}
+    .primary{background:var(--gold);color:#111}
+    .secondary{color:var(--gold2)}
+    section{padding:90px 0}
+    .section-head{margin-bottom:35px}
+    .kicker{color:var(--gold2);text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:700}
+    h2{font-family:"Playfair Display",serif;font-size:clamp(32px,5vw,52px);margin-top:6px}
+    .lead{color:var(--muted);max-width:680px;margin-top:10px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:linear-gradient(145deg,#17171c,#101014);border:1px solid var(--line);padding:26px;border-radius:16px}
+    .icon{font-size:30px;margin-bottom:14px}
+    .card h3{font-size:19px;margin-bottom:7px}
+    .card p{color:var(--muted);font-size:14px}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+    .about-box{border:1px solid var(--line);border-radius:20px;padding:34px;background:linear-gradient(145deg,#17171c,#0f0f12)}
+    .facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+    .fact{padding:15px;border:1px solid var(--line);border-radius:12px}
+    .fact strong{display:block;color:var(--gold2)}
+    .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .media{background:#111;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+    video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#000}
+    .media-caption{padding:14px 16px;color:#ddd;font-weight:600}
+    .contact{background:linear-gradient(135deg,rgba(215,170,85,.13),rgba(255,255,255,.02));border:1px solid rgba(215,170,85,.28);border-radius:24px;padding:45px}
+    .contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+    .contact-list{display:grid;gap:12px}
+    .contact-item{padding:16px;border:1px solid var(--line);border-radius:12px;background:rgba(0,0,0,.18)}
+    .contact-item small{display:block;color:var(--muted);margin-bottom:2px}
+    footer{padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+    .wa{position:fixed;right:18px;bottom:18px;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#07150c;font-size:26px;font-weight:900;z-index:30;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+    @media(max-width:760px){
+      .navlinks{display:none}.menu{display:block}.grid,.about,.contact-grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}
+      section{padding:70px 0}.contact{padding:28px 20px}.hero p{font-size:16px}.brand{font-size:21px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#home">GRS <span>EVENT MANAGEMENT</span></a>
+      <div class="navlinks">
+        <a href="#services">Services</a><a href="#about">About</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+      </div>
+      <button class="menu" aria-label="Menu">☰</button>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Events • Decoration • Memories</div>
+      <h1>We Create <span>Moments</span><br>Worth Remembering.</h1>
+      <p>Professional event planning and decoration for weddings, receptions, birthdays, engagements and special occasions in and around Thirukovilur.</p>
+      <div class="actions">
+        <a class="btn primary" href="https://wa.me/917825040275?text=Hi%20GRS%20Event%20Management,%20I%20would%20like%20to%20enquire%20about%20an%20event." target="_blank">WhatsApp Enquiry</a>
+        <a class="btn secondary" href="#gallery">View Our Work</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head"><div class="kicker">What we do</div><h2>Our Services</h2><p class="lead">From a small family function to a grand celebration, we help plan and create the look and setup for your special day.</p></div>
+      <div class="grid">
+        <div class="card"><div class="icon">💍</div><h3>Wedding Events</h3><p>Wedding stage, venue styling and celebration setup designed around your occasion.</p></div>
+        <div class="card"><div class="icon">🎉</div><h3>Birthday Events</h3><p>Fun and elegant birthday decoration concepts for children, teens and adults.</p></div>
+        <div class="card"><div class="icon">🌸</div><h3>Engagement & Reception</h3><p>Beautiful stage and venue decoration for engagement and reception functions.</p></div>
+        <div class="card"><div class="icon">✨</div><h3>Custom Decoration</h3><p>Theme-based decoration tailored to your preferred colours, style and budget.</p></div>
+        <div class="card"><div class="icon">🎤</div><h3>Event Setup</h3><p>Coordinated event setup to help your function look organised and memorable.</p></div>
+        <div class="card"><div class="icon">📸</div><h3>Special Occasions</h3><p>Celebration setups for family functions, surprises and other special moments.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container about">
+      <div>
+        <div class="kicker">About GRS</div>
+        <h2>Every event deserves its own style.</h2>
+        <p class="lead">GRS Event Management focuses on creating clean, attractive and memorable event experiences. We work with clients to understand the occasion, style and budget before planning the setup.</p>
+        <div class="facts">
+          <div class="fact"><strong>Location</strong>Arakandanallur, Thirukovilur</div>
+          <div class="fact"><strong>Service Area</strong>Thirukovilur & nearby areas</div>
+          <div class="fact"><strong>Enquiries</strong>WhatsApp / Call</div>
+          <div class="fact"><strong>Instagram</strong>@Magical_event.123</div>
+        </div>
+      </div>
+      <div class="about-box">
+        <div class="kicker">Our Promise</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:32px;margin:10px 0">“Your wish. Our setup. A memorable celebration.”</h3>
+        <p style="color:var(--muted)">Tell us your occasion and requirements. We'll discuss the available options and create a plan for your event.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container">
+      <div class="section-head"><div class="kicker">Recent work</div><h2>Our Work</h2><p class="lead">A few event videos from our work. Replace these anytime with your latest projects.</p></div>
+      <div class="gallery">
+        <div class="media"><video controls preload="metadata" src="assets/1000454860.mp4"></video><div class="media-caption">Event Highlights</div></div>
+        <div class="media"><video controls preload="metadata" src="assets/1000434244.mp4"></video><div class="media-caption">Decoration Work</div></div>
+        <div class="media"><video controls preload="metadata" src="assets/1000434249.mp4"></video><div class="media-caption">Celebration Moments</div></div>
+        <div class="media"><video controls preload="metadata" src="assets/1000434253.mp4"></video><div class="media-caption">Event Setup</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact">
+        <div class="contact-grid">
+          <div>
+            <div class="kicker">Let's plan your event</div>
+            <h2>Make your next celebration memorable.</h2>
+            <p class="lead">For date availability, decoration ideas and quotations, contact GRS Event Management.</p>
+            <div class="actions" style="justify-content:flex-start">
+              <a class="btn primary" href="https://wa.me/917825040275?text=Hi%20GRS%20Event%20Management,%20I%20would%20like%20to%20book/discuss%20an%20event." target="_blank">Chat on WhatsApp</a>
+              <a class="btn secondary" href="tel:+917825040275">Call Now</a>
+            </div>
+          </div>
+          <div class="contact-list">
+            <div class="contact-item"><small>Phone / WhatsApp</small>+91 78250 40275</div>
+            <div class="contact-item"><small>Location</small>Arakandanallur, Thirukovilur, Tamil Nadu</div>
+            <div class="contact-item"><small>Instagram</small><a href="https://instagram.com/Magical_event.123" target="_blank">@Magical_event.123</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">© <span id="year"></span> GRS Event Management. All rights reserved.</div>
+</footer>
+<a class="wa" href="https://wa.me/917825040275" target="_blank" aria-label="WhatsApp">⌕</a>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
