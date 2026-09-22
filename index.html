@@ -144,15 +144,22 @@
     
     <style>
   .gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .gallery .media {
-  width: 50%;
-  margin-left: 0;
-  margin-right: 0;
-}
+    width: 50%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+    .gallery .media img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+    }
      </style>
       
       <!-- Stage Decoration Photos -->
