@@ -232,7 +232,22 @@
   <script>
 function openPhoto(element) {
   const img = element.querySelector("img");
-  alert("Photo clicked!");
+  const img = element.querySelector("img");
+const viewer = document.getElementById("photoViewer");
+
+viewer.innerHTML = `
+  <div style="position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:15px;">
+    <img src="${img.src}" style="max-width:100%;max-height:80vh;object-fit:contain;">
+    <div style="display:flex;gap:12px;margin-top:15px;">
+      <a href="${img.src}" download style="padding:10px 16px;background:white;color:black;border-radius:8px;text-decoration:none;">Download</a>
+      <button onclick="navigator.share({url:'${img.src}'})" style="padding:10px 16px;border:0;border-radius:8px;">Share</button>
+      <button onclick="this.innerHTML='❤️';" style="padding:10px 16px;border:0;border-radius:8px;">♡ Favourite</button>
+      <button onclick="document.getElementById('photoViewer').style.display='none'" style="padding:10px 16px;border:0;border-radius:8px;">✕ Close</button>
+    </div>
+  </div>
+`;
+
+viewer.style.display = "block";
 }
   </script>
   <div id="photoViewer" style="display:none;">
