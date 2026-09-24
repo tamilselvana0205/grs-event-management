@@ -286,6 +286,15 @@ viewer.innerHTML = `
 
 viewer.style.display = "block";
 }
+    document.addEventListener("play", function(event) {
+  if (event.target.tagName === "VIDEO") {
+    document.querySelectorAll("#photoViewer video").forEach(function(video) {
+      if (video !== event.target) {
+        video.pause();
+      }
+    });
+  }
+}, true);
   </script>
   <div id="photoViewer" style="display:none;">
   </div>
