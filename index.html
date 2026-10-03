@@ -110,7 +110,7 @@
       <div class="section-head"><div class="kicker">What we do</div><h2>Our Services</h2><p class="lead">From a small family function to a grand celebration, we help plan and create the look and setup for your special day.</p></div>
       <div class="grid">
         <div class="card" onclick="openWeddingVideos()"><img src="IMG-20260922-WA0037.jpg" alt="Wedding Events" style="width:100%;height:180px;object-fit:cover;border-radius:12px;"><h3>Wedding Events</h3><p>Wedding stage, venue styling and celebration setup designed around your occasion.</p></div>
-        <div class="card"><div class="icon">🎉</div><h3>Birthday Events</h3><p>Fun and elegant birthday decoration concepts for children, teens and adults.</p></div>
+        <div class="card" onclick="openBirthdayEvents()"><div class="icon">🎉</div><h3>Birthday Events</h3><p>Fun and elegant birthday decoration concepts for children, teens and adults.</p></div>
         <div class="card"><div class="icon">🌸</div><h3>Engagement & Reception</h3><p>Beautiful stage and venue decoration for engagement and reception functions.</p></div>
         <div class="card"><div class="icon">📸</div><h3>Special Occasions</h3><p>Celebration setups for family functions, surprises and other special moments.</p></div>
       </div>
@@ -343,6 +343,69 @@ function openWeddingVideos() {
     });
   }
 }, true);
+    function openBirthdayEvents() {
+  const viewer = document.getElementById("photoViewer");
+
+  viewer.innerHTML = `
+    <div style="position:fixed;inset:0;background:#000;z-index:9999;overflow-y:auto;padding:25px;">
+
+      <h2 style="color:white;text-align:center;margin-bottom:30px;">Birthday Events</h2>
+
+      <div style="display:flex;flex-direction:column;gap:18px;max-width:500px;margin:auto;">
+
+        <button id="birthdayPhotosFolder" style="width:100%;padding:24px 20px;background:linear-gradient(135deg,#17130f,#252019);color:white;border:1px solid #c9a45c;border-radius:18px;font-size:21px;font-weight:600;text-align:left;box-shadow:0 8px 25px rgba(0,0,0,.35);">
+          📷 &nbsp; Birthday Photos
+          <span style="display:block;margin:8px 0 0 42px;color:#bdb7ae;font-size:14px;font-weight:400;">Photos & Memories</span>
+        </button>
+
+        <button id="birthdayVideosFolder" style="width:100%;padding:24px 20px;background:linear-gradient(135deg,#17130f,#252019);color:white;border:1px solid #c9a45c;border-radius:18px;font-size:21px;font-weight:600;text-align:left;box-shadow:0 8px 25px rgba(0,0,0,.35);">
+          🎥 &nbsp; Birthday Videos
+          <span style="display:block;margin:8px 0 0 42px;color:#bdb7ae;font-size:14px;font-weight:400;">Event Highlights</span>
+        </button>
+
+      </div>
+
+      <button onclick="document.getElementById('photoViewer').style.display='none'" style="display:block;margin:30px auto;padding:12px 25px;border:0;border-radius:8px;">
+        ✕ Close
+      </button>
+
+    </div>
+  `;
+
+  viewer.style.display = "block";
+
+  document.getElementById("birthdayPhotosFolder").onclick = function() {
+    viewer.innerHTML = `
+      <div style="position:fixed;inset:0;background:#000;z-index:9999;overflow-y:auto;padding:20px;">
+        <h2 style="color:white;text-align:center;">Birthday Photos</h2>
+
+        <p style="color:#aaa;text-align:center;margin-top:30px;">
+          New birthday photos will be added here.
+        </p>
+
+        <button onclick="openBirthdayEvents()" style="display:block;margin:30px auto;padding:12px 25px;border:0;border-radius:8px;">
+          ← Back
+        </button>
+      </div>
+    `;
+  };
+
+  document.getElementById("birthdayVideosFolder").onclick = function() {
+    viewer.innerHTML = `
+      <div style="position:fixed;inset:0;background:#000;z-index:9999;overflow-y:auto;padding:20px;">
+        <h2 style="color:white;text-align:center;">Birthday Videos</h2>
+
+        <p style="color:#aaa;text-align:center;margin-top:30px;">
+          New birthday videos will be added here.
+        </p>
+
+        <button onclick="openBirthdayEvents()" style="display:block;margin:30px auto;padding:12px 25px;border:0;border-radius:8px;">
+          ← Back
+        </button>
+      </div>
+    `;
+  };
+    }
   </script>
   <div id="photoViewer" style="display:none;">
   </div>
